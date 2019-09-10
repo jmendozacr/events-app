@@ -1,11 +1,15 @@
-import React from 'react';
+import React              from 'react';
+import Header             from './components/Header';
+import CategoriesProvider from './context/CategoriesContext';
 
 function App() {
-  return (
-    <div className="App">
-      hello world!
-    </div>
-  );
+    return (
+        <CategoriesProvider>
+            <Header 
+                title="React events with EventBrite and API"
+            />
+        </CategoriesProvider>
+    );
 }
 
 export default App;
