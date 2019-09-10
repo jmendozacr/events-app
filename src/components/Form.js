@@ -7,6 +7,12 @@ export class Form extends Component {
         category: ''
     }
 
+    handleChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
     render() {
         return (
             <form>
@@ -23,12 +29,15 @@ export class Form extends Component {
                             className="uk-input"
                             type="text"
                             placeholder="Event name or city"
+                            onChange={this.handleChange}
                         />
                     </div>
                     <div className="uk-margin" uk-margin="true">
                         <select
                             name="category"
+                            onChange={this.handleChange}
                             className="uk-select">
+                                <option value="">--Select Category--</option>
                                 <CategoriesConsumer>
                                     {
                                         (value) => {
