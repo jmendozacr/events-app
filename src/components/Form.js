@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component }     from 'react';
+import { CategoriesConsumer }   from '../context/CategoriesContext';
 
 export class Form extends Component {
     state = {
@@ -28,8 +28,24 @@ export class Form extends Component {
                     <div className="uk-margin" uk-margin="true">
                         <select
                             name="category"
-                            className="uk-select"
-                        >
+                            className="uk-select">
+                                <CategoriesConsumer>
+                                    {
+                                        (value) => {
+                                            return (
+                                                value.categories.map(category => (
+                                                    <option
+                                                        key={category.id}
+                                                        value={category.name}
+                                                        data-uk-form-select
+                                                    >
+                                                        {category.name}
+                                                    </option>
+                                                ))
+                                            )
+                                        }
+                                    }
+                                </CategoriesConsumer>
                         </select>
                     </div>
                     <div>
