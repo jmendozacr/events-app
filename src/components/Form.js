@@ -54,7 +54,7 @@ export class Form extends Component {
                                                             value.categories.map(category => (
                                                                 <option
                                                                     key={category.id}
-                                                                    value={category.name}
+                                                                    value={category.id}
                                                                     data-uk-form-select
                                                                 >
                                                                     {category.name}

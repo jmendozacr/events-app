@@ -14,7 +14,7 @@ export class EventsProvider extends Component {
     }
 
     getEvents = async (search) => {
-        let url = `https://private-anon-18c2fe6a52-eventbriteapiv3public.apiary-mock.com/v3/events/search/?q=${search.name}&categories=${search.category}&sort_by=${this.sortBy}&token=${this.token}`;
+        let url = `https://www.eventbriteapi.com/v3/events/search/?q=${search.name}&categories=${search.category}&sort_by=${this.sortBy}&token=${this.token}`;
 
         const events = await axios.get(url);
 
